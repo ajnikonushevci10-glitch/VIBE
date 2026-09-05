@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #08090c;
+    color: white;
+    min-height: 100vh;
+}
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.logo {
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: 8px;
+}
+
+.subtitle {
+    margin-top: 10px;
+    margin-bottom: 45px;
+
+    color: #8b8f9a;
+    font-size: 18px;
+}
+
+.vibes {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 15px;
+}
+
+.vibe-card {
+    height: 120px;
+
+    border: 1px solid #24262d;
+    border-radius: 18px;
+
+    background: #111318;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.vibe-card span {
+    font-size: 30px;
+}
+
+.vibe-card p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.vibe-card:hover {
+    transform: translateY(-5px);
+    border-color: #5965ff;
+    background: #161925;
+}
+
+.vibe-button {
+    margin-top: 35px;
+
+    padding: 16px 45px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: white;
+    color: #08090c;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.vibe-button:hover {
+    transform: scale(1.05);
+}
+
+.vibe-card.selected {
+    border-color: #5965ff;
+    background: #181b2b;
+    transform: translateY(-5px);
+}
+
+.result {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.result-small {
+    color: #777b88;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.result h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.result-card {
+    background: #111318;
+    border: 1px solid #24262d;
+    border-radius: 24px;
+    padding: 40px 30px;
+}
+
+.result-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.result-card p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.result-info {
+    margin-top: 25px;
+    color: #777b88;
+    font-size: 14px;
+}
+
+.back-button {
+    display: block;
+    margin: 18px auto 0;
+
+    background: none;
+    border: none;
+
+    color: #777b88;
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+.back-button:hover {
+    color: white;
+}
+
+.result-card h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.score {
+    margin-top: 25px;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 25px 18px;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 48px;
+        letter-spacing: 6px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .vibes {
+        width: 100%;
+        max-width: 420px;
+
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .vibe-card {
+        width: 100%;
+        height: 105px;
+        border-radius: 16px;
+    }
+
+    .vibe-card span {
+        font-size: 27px;
+    }
+
+    .vibe-card p {
+        font-size: 13px;
+    }
+
+    .vibe-button {
+        width: 100%;
+        max-width: 420px;
+        margin-top: 25px;
+    }
+
+    .result {
+        width: 100%;
+    }
+
+    .result h1 {
+        font-size: 38px;
+    }
+
+    .result-card {
+        padding: 30px 20px;
+    }
+
+    .result-card h2 {
+        font-size: 23px;
+    }
+
+    .result-card p {
+        font-size: 17px;
+    }
+
+    .result-info {
+        line-height: 2;
+    }
+}
+
+.share-button {
+    display: block;
+
+    margin: 15px auto 0;
+
+    padding: 13px 25px;
+
+    background: transparent;
+
+    border: 1px solid #24262d;
+    border-radius: 25px;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.share-button:hover {
+    border-color: #5965ff;
+    background: #111318;
+    transform: translateY(-2px);
+}
+
+/* ANIMATIONS */
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading {
+    font-size: 14px;
+    color: #777b88;
+    letter-spacing: 2px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
