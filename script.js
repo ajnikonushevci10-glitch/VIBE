@@ -1,4 +1,4 @@
-            const vibeCards = document.querySelectorAll(".vibe-card");
+const vibeCards = document.querySelectorAll(".vibe-card");
 const vibeButton = document.getElementById("vibeButton");
 
 let selectedVibe = null;
